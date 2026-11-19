@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registration Page</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background Circuit Design -->
+    <svg class="circuit-bg"
+         viewBox="0 0 1200 650"
+         preserveAspectRatio="xMidYMid slice">
+
+        <g fill="none"
+           stroke="#00cfff"
+           stroke-width="2"
+           opacity="0.75">
+
+            <!-- Left Side -->
+            <path d="M0 0 L50 50 L180 50 L230 100 L300 100"/>
+            <path d="M0 70 L100 70 L150 120 L230 120 L280 170"/>
+            <path d="M0 160 L80 160 L120 120 L180 120 L250 190"/>
+            <path d="M0 240 L100 240 L160 180 L210 180 L280 250"/>
+            <path d="M0 300 L130 300 L190 360 L280 360"/>
+            <path d="M0 380 L100 380 L160 430 L260 430"/>
+            <path d="M0 480 L100 480 L150 530 L270 530"/>
+
+            <!-- Right Side -->
+            <path d="M1200 0 L1150 50 L1020 50 L970 100 L900 100"/>
+            <path d="M1200 80 L1100 80 L1050 130 L970 130 L920 180"/>
+            <path d="M1200 180 L1120 180 L1060 120 L1000 120 L920 200"/>
+            <path d="M1200 260 L1100 260 L1040 210 L970 210 L920 280"/>
+            <path d="M1200 340 L1080 340 L1020 390 L920 390"/>
+            <path d="M1200 450 L1100 450 L1050 500 L940 500"/>
+            <path d="M1200 550 L1100 550 L1050 600 L920 600"/>
+
+        </g>
+
+        <g fill="#00e5ff">
+            <circle cx="140" cy="70" r="5"/>
+            <circle cx="200" cy="190" r="5"/>
+            <circle cx="80" cy="240" r="5"/>
+            <circle cx="160" cy="430" r="5"/>
+            <circle cx="100" cy="530" r="5"/>
+
+            <circle cx="1060" cy="100" r="5"/>
+            <circle cx="980" cy="210" r="5"/>
+            <circle cx="1120" cy="300" r="5"/>
+            <circle cx="1040" cy="430" r="5"/>
+            <circle cx="950" cy="550" r="5"/>
+        </g>
+
+    </svg>
+
+
+    <!-- Registration Container -->
+    <div class="registration-container">
+
+        <h1>Registration</h1>
+
+        <form id="registrationForm">
+
+            <div class="input-grid">
+
+                <!-- Full Name -->
+                <div class="input-box">
+                    <span class="icon">👤</span>
+                    <input
+                        type="text"
+                        id="fullname"
+                        placeholder="Full Name"
+                        required
+                    >
+                </div>
+
+                <!-- Username -->
+                <div class="input-box">
+                    <span class="icon">👤</span>
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Username"
+                        required
+                    >
+                </div>
+
+                <!-- Email -->
+                <div class="input-box">
+                    <span class="icon">✉</span>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Email Address"
+                        required
+                    >
+                </div>
+
+                <!-- Phone -->
+                <div class="input-box">
+                    <span class="icon">📞</span>
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Phone Number"
+                        pattern="[0-9]{10}"
+                        maxlength="10"
+                        required
+                    >
+                </div>
+
+                <!-- Password -->
+                <div class="input-box">
+                    <span class="icon">🔒</span>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Password"
+                        minlength="8"
+                        required
+                    >
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="input-box">
+                    <span class="icon">🔒</span>
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm Password"
+                        required
+                    >
+                </div>
+
+            </div>
+
+            <!-- Terms Checkbox -->
+            <div class="terms">
+                <input
+                    type="checkbox"
+                    id="terms"
+                    required
+                >
+
+                <label for="terms">
+                    I hereby declare that the above information
+                    provided is true and correct
+                </label>
+            </div>
+
+            <!-- Error / Success Message -->
+            <p id="message"></p>
+
+            <!-- Register Button -->
+            <button type="submit" class="register-btn">
+                Register
+            </button>
+
+        </form>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,405 @@
+
+/* Remove Default Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Main Body */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #064a79 0%,
+            #052d61 45%,
+            #00143d 100%
+        );
+
+    overflow-x: hidden;
+    padding: 25px;
+}
+
+
+/* Circuit Background */
+
+.circuit-bg {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+
+/* Registration Box */
+
+.registration-container {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 640px;
+
+    padding: 38px 30px 45px;
+
+    background: rgba(80, 130, 165, 0.35);
+
+    border: 1px solid rgba(160, 220, 255, 0.35);
+
+    border-radius: 10px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 0 25px rgba(0, 190, 255, 0.15),
+        inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+
+/* Heading */
+
+h1 {
+    color: white;
+    text-align: center;
+
+    font-size: 30px;
+    font-weight: bold;
+
+    margin-bottom: 35px;
+}
+
+
+/* Input Grid */
+
+.input-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+}
+
+
+/* Input Box */
+
+.input-box {
+    display: flex;
+    align-items: center;
+
+    height: 43px;
+
+    padding: 0 12px;
+
+    border: 2px solid rgba(160, 220, 255, 0.25);
+
+    border-radius: 6px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    transition: 0.3s ease;
+}
+
+
+/* Input Hover Effect */
+
+.input-box:focus-within {
+    border-color: #00e5ff;
+
+    box-shadow:
+        0 0 10px rgba(0, 229, 255, 0.3);
+}
+
+
+/* Icons */
+
+.icon {
+    color: white;
+    font-size: 16px;
+
+    margin-right: 10px;
+
+    flex-shrink: 0;
+}
+
+
+/* Input Fields */
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 14px;
+}
+
+
+/* Placeholder */
+
+.input-box input::placeholder {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* Terms Section */
+
+.terms {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin-top: 22px;
+
+    color: white;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.terms input {
+    margin-top: 3px;
+    accent-color: #00d9ff;
+}
+
+
+/* Message */
+
+#message {
+    margin-top: 12px;
+    text-align: center;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    color: white;
+}
+
+
+/* Register Button */
+
+.register-btn {
+    width: 100%;
+
+    height: 40px;
+
+    margin-top: 18px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: white;
+
+    color: #222;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+/* Button Hover */
+
+.register-btn:hover {
+    background: #00d9ff;
+
+    color: #001b3d;
+
+    box-shadow:
+        0 0 15px rgba(0, 217, 255, 0.5);
+}
+
+
+/* Button Click */
+
+.register-btn:active {
+    transform: scale(0.98);
+}
+
+
+/* Mobile Responsive Design */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .registration-container {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 25px;
+        margin-bottom: 25px;
+    }
+
+    .input-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .terms {
+        font-size: 12px;
+    }
+
+}
+
+/* =================================
+   ANIMATED CIRCUIT BACKGROUND
+================================= */
+
+.circuit-bg {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+    pointer-events: none;
+
+    overflow: visible;
+}
+
+
+/* Neon glowing circuit lines */
+
+.circuit-bg path {
+    stroke: #00d9ff;
+    stroke-width: 2;
+
+    fill: none;
+
+    stroke-dasharray: 12 8;
+
+    filter:
+        drop-shadow(0 0 3px #00d9ff)
+        drop-shadow(0 0 7px #008cff);
+
+    animation:
+        circuitMove 5s linear infinite,
+        circuitGlow 2s ease-in-out infinite alternate;
+}
+
+
+/* Moving light animation */
+
+@keyframes circuitMove {
+
+    0% {
+        stroke-dashoffset: 100;
+    }
+
+    100% {
+        stroke-dashoffset: 10;
+    }
+
+}
+
+
+/* Glowing effect */
+
+@keyframes circuitGlow {
+
+    0% {
+        opacity: 0.45;
+
+        filter:
+            drop-shadow(0 0 2px #00d9ff);
+    }
+
+    100% {
+        opacity: 1;
+
+        filter:
+            drop-shadow(0 0 5px #00eaff)
+            drop-shadow(0 0 15px #008cff);
+    }
+
+}
+
+
+/* Pulsating circuit dots */
+
+.circuit-bg circle {
+
+    fill: #00f0ff;
+
+    filter:
+        drop-shadow(0 0 5px #00eaff)
+        drop-shadow(0 0 12px #00aaff);
+
+    animation: dotPulse 1.5s ease-in-out infinite alternate;
+
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+
+@keyframes dotPulse {
+
+    0% {
+        opacity: 0.4;
+        transform: scale(0.7);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+
+}
+
+
+/* Registration card stays above background */
+
+.registration-container {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Smooth background glow */
+
+body {
+    background:
+        radial-gradient(
+            circle at center,
+            #07558b,
+            #032653 55%,
+            #00102f 100%
+        );
+}
+
+
+/* Accessibility: reduce motion if requested */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .circuit-bg path,
+    .circuit-bg circle {
+        animation: none;
+    }
+
+}
